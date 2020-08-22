@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DUAN_KHUCNCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TY_LE_CHI_RD">
+          <Key>
+            <PropertyRef Name="TEN_DU_AN_TIENG_VIET" />
+          </Key>
+          <Property Name="TEN_DU_AN_TIENG_VIET" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="NAM_2015" Type="float" />
+          <Property Name="NAM_2016" Type="float" />
+          <Property Name="NAM_2017" Type="float" />
+          <Property Name="NAM_2018" Type="float" />
+          <Property Name="NAM_2019" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DUAN_KHUCNC.dbo.TY_LE_LAO_DONG_RD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TY_LE_LAO_DONG_RD">
+          <Key>
+            <PropertyRef Name="TEN_DU_AN_TIENG_VIET" />
+          </Key>
+          <Property Name="TEN_DU_AN_TIENG_VIET" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="NAM_2015" Type="float" />
+          <Property Name="NAM_2016" Type="float" />
+          <Property Name="NAM_2017" Type="float" />
+          <Property Name="NAM_2018" Type="float" />
+          <Property Name="NAM_2019" Type="float" />
+        </EntityType>
+        <EntityContainer Name="DUAN_KHUCNCModelStoreContainer">
+          <EntitySet Name="TY_LE_CHI_RD" EntityType="Self.TY_LE_CHI_RD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TY_LE_LAO_DONG_RD" EntityType="Self.TY_LE_LAO_DONG_RD" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TY_LE_LAO_DONG_RD].[TEN_DU_AN_TIENG_VIET] AS [TEN_DU_AN_TIENG_VIET], 
+    [TY_LE_LAO_DONG_RD].[NAM_2015] AS [NAM_2015], 
+    [TY_LE_LAO_DONG_RD].[NAM_2016] AS [NAM_2016], 
+    [TY_LE_LAO_DONG_RD].[NAM_2017] AS [NAM_2017], 
+    [TY_LE_LAO_DONG_RD].[NAM_2018] AS [NAM_2018], 
+    [TY_LE_LAO_DONG_RD].[NAM_2019] AS [NAM_2019]
+    FROM [dbo].[TY_LE_LAO_DONG_RD] AS [TY_LE_LAO_DONG_RD]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DUAN_KHUCNCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TY_LE_CHI_RD">
+          <Key>
+            <PropertyRef Name="TEN_DU_AN_TIENG_VIET" />
+          </Key>
+          <Property Name="TEN_DU_AN_TIENG_VIET" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NAM_2015" Type="Double" />
+          <Property Name="NAM_2016" Type="Double" />
+          <Property Name="NAM_2017" Type="Double" />
+          <Property Name="NAM_2018" Type="Double" />
+          <Property Name="NAM_2019" Type="Double" />
+        </EntityType>
+        <EntityType Name="TY_LE_LAO_DONG_RD">
+          <Key>
+            <PropertyRef Name="TEN_DU_AN_TIENG_VIET" />
+          </Key>
+          <Property Name="TEN_DU_AN_TIENG_VIET" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NAM_2015" Type="Double" />
+          <Property Name="NAM_2016" Type="Double" />
+          <Property Name="NAM_2017" Type="Double" />
+          <Property Name="NAM_2018" Type="Double" />
+          <Property Name="NAM_2019" Type="Double" />
+        </EntityType>
+        <EntityContainer Name="DUAN_KHUCNCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TY_LE_CHI_RD" EntityType="Self.TY_LE_CHI_RD" />
+          <EntitySet Name="TY_LE_LAO_DONG_RD" EntityType="Self.TY_LE_LAO_DONG_RD" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DUAN_KHUCNCModelStoreContainer" CdmEntityContainer="DUAN_KHUCNCEntities">
+          <EntitySetMapping Name="TY_LE_CHI_RD">
+            <EntityTypeMapping TypeName="DUAN_KHUCNCModel.TY_LE_CHI_RD">
+              <MappingFragment StoreEntitySet="TY_LE_CHI_RD">
+                <ScalarProperty Name="TEN_DU_AN_TIENG_VIET" ColumnName="TEN_DU_AN_TIENG_VIET" />
+                <ScalarProperty Name="NAM_2015" ColumnName="NAM_2015" />
+                <ScalarProperty Name="NAM_2016" ColumnName="NAM_2016" />
+                <ScalarProperty Name="NAM_2017" ColumnName="NAM_2017" />
+                <ScalarProperty Name="NAM_2018" ColumnName="NAM_2018" />
+                <ScalarProperty Name="NAM_2019" ColumnName="NAM_2019" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TY_LE_LAO_DONG_RD">
+            <EntityTypeMapping TypeName="DUAN_KHUCNCModel.TY_LE_LAO_DONG_RD">
+              <MappingFragment StoreEntitySet="TY_LE_LAO_DONG_RD">
+                <ScalarProperty Name="TEN_DU_AN_TIENG_VIET" ColumnName="TEN_DU_AN_TIENG_VIET" />
+                <ScalarProperty Name="NAM_2015" ColumnName="NAM_2015" />
+                <ScalarProperty Name="NAM_2016" ColumnName="NAM_2016" />
+                <ScalarProperty Name="NAM_2017" ColumnName="NAM_2017" />
+                <ScalarProperty Name="NAM_2018" ColumnName="NAM_2018" />
+                <ScalarProperty Name="NAM_2019" ColumnName="NAM_2019" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

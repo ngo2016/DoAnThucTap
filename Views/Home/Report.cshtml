@@ -1,0 +1,73 @@
+﻿@model DoAnThucTap.ViewModel.RDViewModel
+
+@{
+    ViewBag.Title = "Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ul class="nav nav-pills">
+    <li class="nav-item ">
+        <a class="nav-link active rounded-0" data-toggle="pill" href="#home">Tỷ lệ chi</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link rounded-0" data-toggle="pill" href="#menu1">Tỷ lệ lao động</a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane container active p-0" id="home">
+        <h5 class="text-uppercase p-2 text-center">Tỷ lệ chi R&D của các dự án</h5>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark text-white">
+                <tr>
+                    <th>@Html.DisplayNameFor(m => Model.RDCost.FirstOrDefault().TEN_DU_AN_TIENG_VIET)</th>
+                    <th>@Html.DisplayNameFor(m => Model.RDCost.FirstOrDefault().NAM_2015)</th>
+                    <th>@Html.DisplayNameFor(m => Model.RDCost.FirstOrDefault().NAM_2016)</th>
+                    <th>@Html.DisplayNameFor(m => Model.RDCost.FirstOrDefault().NAM_2017)</th>
+                    <th>@Html.DisplayNameFor(m => Model.RDCost.FirstOrDefault().NAM_2018)</th>
+                    <th>@Html.DisplayNameFor(m => Model.RDCost.FirstOrDefault().NAM_2019)</th>
+</thead>
+            <tbody>
+                @foreach (var RD in Model.RDCost)
+                {
+                    <tr>
+                        <td>@RD.TEN_DU_AN_TIENG_VIET</td>
+                        <td>@RD.NAM_2015</td>
+                        <td>@RD.NAM_2016</td>
+                        <td>@RD.NAM_2017</td>
+                        <td>@RD.NAM_2018</td>
+                        <td>@RD.NAM_2019</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="tab-pane container fade p-0" id="menu1">
+        <h5 class="text-uppercase p-2 text-center">Tỷ lệ lao động có bằng đại học, trên đại học tham gia R&D</h5>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark text-white">
+                <tr>
+                    <th>@Html.DisplayNameFor(m => Model.RDEmployee.FirstOrDefault().TEN_DU_AN_TIENG_VIET)</th>
+                    <th>@Html.DisplayNameFor(m => Model.RDEmployee.FirstOrDefault().NAM_2015)</th>
+                    <th>@Html.DisplayNameFor(m => Model.RDEmployee.FirstOrDefault().NAM_2016)</th>
+                    <th>@Html.DisplayNameFor(m => Model.RDEmployee.FirstOrDefault().NAM_2017)</th>
+                    <th>@Html.DisplayNameFor(m => Model.RDEmployee.FirstOrDefault().NAM_2018)</th>
+                    <th>@Html.DisplayNameFor(m => Model.RDEmployee.FirstOrDefault().NAM_2019)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var RD in Model.RDEmployee)
+                {
+                    <tr>
+                        <td>@RD.TEN_DU_AN_TIENG_VIET</td>
+                        <td>@RD.NAM_2015</td>
+                        <td>@RD.NAM_2016</td>
+                        <td>@RD.NAM_2017</td>
+                        <td>@RD.NAM_2018</td>
+                        <td>@RD.NAM_2019</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>    
+</div>
+
