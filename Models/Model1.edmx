@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DUAN_KHUCNCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DUAN_KHUCNCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TY_LE_CHI_RD">
           <Key>
             <PropertyRef Name="TEN_DU_AN_TIENG_VIET" />
@@ -29,6 +29,18 @@ warning 6002: The table/view 'DUAN_KHUCNC.dbo.TY_LE_LAO_DONG_RD' does not have a
           <Property Name="NAM_2018" Type="float" />
           <Property Name="NAM_2019" Type="float" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DUAN_KHUCNC.dbo.V_RD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_RD">
+          <Key>
+            <PropertyRef Name="NAM" />
+          </Key>
+          <Property Name="TENDN_VT" Type="nvarchar" MaxLength="100" />
+          <Property Name="NAM" Type="int" Nullable="false" />
+          <Property Name="TY_LE_CHI_PHI_RD" Type="float" />
+          <Property Name="TY_LE_DH_TREN_DH_THAM_GIA_RD" Type="float" />
+          <Property Name="KINH_PHI" Type="money" />
+        </EntityType>
         <EntityContainer Name="DUAN_KHUCNCModelStoreContainer">
           <EntitySet Name="TY_LE_CHI_RD" EntityType="Self.TY_LE_CHI_RD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TY_LE_LAO_DONG_RD" EntityType="Self.TY_LE_LAO_DONG_RD" store:Type="Tables" store:Schema="dbo">
@@ -41,9 +53,17 @@ warning 6002: The table/view 'DUAN_KHUCNC.dbo.TY_LE_LAO_DONG_RD' does not have a
     [TY_LE_LAO_DONG_RD].[NAM_2019] AS [NAM_2019]
     FROM [dbo].[TY_LE_LAO_DONG_RD] AS [TY_LE_LAO_DONG_RD]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="V_RD" EntityType="Self.V_RD" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_RD].[TENDN_VT] AS [TENDN_VT], 
+    [V_RD].[NAM] AS [NAM], 
+    [V_RD].[TY_LE_CHI_PHI_RD] AS [TY_LE_CHI_PHI_RD], 
+    [V_RD].[TY_LE_DH_TREN_DH_THAM_GIA_RD] AS [TY_LE_DH_TREN_DH_THAM_GIA_RD], 
+    [V_RD].[KINH_PHI] AS [KINH_PHI]
+    FROM [dbo].[V_RD] AS [V_RD]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DUAN_KHUCNCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -72,7 +92,18 @@ warning 6002: The table/view 'DUAN_KHUCNC.dbo.TY_LE_LAO_DONG_RD' does not have a
         <EntityContainer Name="DUAN_KHUCNCEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TY_LE_CHI_RD" EntityType="Self.TY_LE_CHI_RD" />
           <EntitySet Name="TY_LE_LAO_DONG_RD" EntityType="Self.TY_LE_LAO_DONG_RD" />
+          <EntitySet Name="V_RD" EntityType="DUAN_KHUCNCModel.V_RD" />
         </EntityContainer>
+        <EntityType Name="V_RD">
+          <Key>
+            <PropertyRef Name="NAM" />
+          </Key>
+          <Property Name="TENDN_VT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NAM" Type="Int32" Nullable="false" />
+          <Property Name="TY_LE_CHI_PHI_RD" Type="Double" />
+          <Property Name="TY_LE_DH_TREN_DH_THAM_GIA_RD" Type="Double" />
+          <Property Name="KINH_PHI" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -100,6 +131,17 @@ warning 6002: The table/view 'DUAN_KHUCNC.dbo.TY_LE_LAO_DONG_RD' does not have a
                 <ScalarProperty Name="NAM_2017" ColumnName="NAM_2017" />
                 <ScalarProperty Name="NAM_2018" ColumnName="NAM_2018" />
                 <ScalarProperty Name="NAM_2019" ColumnName="NAM_2019" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_RD">
+            <EntityTypeMapping TypeName="DUAN_KHUCNCModel.V_RD">
+              <MappingFragment StoreEntitySet="V_RD">
+                <ScalarProperty Name="KINH_PHI" ColumnName="KINH_PHI" />
+                <ScalarProperty Name="TY_LE_DH_TREN_DH_THAM_GIA_RD" ColumnName="TY_LE_DH_TREN_DH_THAM_GIA_RD" />
+                <ScalarProperty Name="TY_LE_CHI_PHI_RD" ColumnName="TY_LE_CHI_PHI_RD" />
+                <ScalarProperty Name="NAM" ColumnName="NAM" />
+                <ScalarProperty Name="TENDN_VT" ColumnName="TENDN_VT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
