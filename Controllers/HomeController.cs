@@ -29,39 +29,54 @@ namespace DoAnThucTap.Controllers
 
         public ActionResult Prediction()
         {
-            List<SelectListItem> mySkills = new List<SelectListItem>() {
-        new SelectListItem {
-            Text = "ASP.NET MVC", Value = "1"
-        },
-        new SelectListItem {
-            Text = "ASP.NET WEB API", Value = "2"
-        },
-        new SelectListItem {
-            Text = "ENTITY FRAMEWORK", Value = "3"
-        },
-        new SelectListItem {
-            Text = "DOCUSIGN", Value = "4"
-        },
-        new SelectListItem {
-            Text = "ORCHARD CMS", Value = "5"
-        },
-        new SelectListItem {
-            Text = "JQUERY", Value = "6"
-        },
-        new SelectListItem {
-            Text = "ZENDESK", Value = "7"
-        },
-        new SelectListItem {
-            Text = "LINQ", Value = "8"
-        },
-        new SelectListItem {
-            Text = "C#", Value = "9"
-        },
-        new SelectListItem {
-            Text = "GOOGLE ANALYTICS", Value = "10"
-        },
-    };
-            ViewBag.MySkills = mySkills;
+            List<SelectListItem> doanhNghiep = new List<SelectListItem>() {
+                new SelectListItem {
+                    Text = "DaeYoung", Value = "1"
+                },
+                new SelectListItem {
+                    Text = "Daikou", Value = "2"
+                },
+                new SelectListItem {
+                    Text = "Datalogic", Value = "3"
+                },
+                new SelectListItem {
+                    Text = "DGS", Value = "4"
+                },
+                new SelectListItem {
+                    Text = "Jabil", Value = "5"
+                },
+                new SelectListItem {
+                    Text = "Nidec Sankyo ", Value = "6"
+                },
+                new SelectListItem {
+                    Text = "Nidec Servo ", Value = "7"
+                },
+                new SelectListItem {
+                    Text = "Platel Vina", Value = "8"
+                },
+                new SelectListItem {
+                    Text = "Samsung", Value = "9"
+                },
+                new SelectListItem {
+                    Text = "Sanofi", Value = "10"
+                },
+                new SelectListItem {
+                    Text = "Sonion ", Value = "11"
+                },
+                new SelectListItem {
+                    Text = "STID", Value = "12"
+                },
+                new SelectListItem {
+                    Text = "T.C", Value = "13"
+                },
+                new SelectListItem {
+                    Text = "The Gioi GEN", Value = "14"
+                },
+                new SelectListItem {
+                    Text = "United Healthcare ", Value = "15"
+                },
+            };
+            ViewBag.DoanhNghiep = doanhNghiep;
 
             return View();
         }
