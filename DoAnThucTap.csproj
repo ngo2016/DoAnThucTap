@@ -147,6 +147,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\NAME.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TY_LE_CHI_RD.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -5,6 +5,13 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DUAN_KHUCNCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="NAME">
+          <Key>
+            <PropertyRef Name="TENDN_VT" />
+          </Key>
+          <Property Name="TENDN_VT" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LINK" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="TY_LE_CHI_RD">
           <Key>
             <PropertyRef Name="TEN_DU_AN_TIENG_VIET" />
@@ -42,6 +49,7 @@ warning 6002: The table/view 'DUAN_KHUCNC.dbo.V_RD' does not have a primary key 
           <Property Name="KINH_PHI" Type="money" />
         </EntityType>
         <EntityContainer Name="DUAN_KHUCNCModelStoreContainer">
+          <EntitySet Name="NAME" EntityType="Self.NAME" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TY_LE_CHI_RD" EntityType="Self.TY_LE_CHI_RD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TY_LE_LAO_DONG_RD" EntityType="Self.TY_LE_LAO_DONG_RD" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -93,6 +101,7 @@ warning 6002: The table/view 'DUAN_KHUCNC.dbo.V_RD' does not have a primary key 
           <EntitySet Name="TY_LE_CHI_RD" EntityType="Self.TY_LE_CHI_RD" />
           <EntitySet Name="TY_LE_LAO_DONG_RD" EntityType="Self.TY_LE_LAO_DONG_RD" />
           <EntitySet Name="V_RD" EntityType="DUAN_KHUCNCModel.V_RD" />
+          <EntitySet Name="NAMEs" EntityType="DUAN_KHUCNCModel.NAME" />
         </EntityContainer>
         <EntityType Name="V_RD">
           <Key>
@@ -103,6 +112,13 @@ warning 6002: The table/view 'DUAN_KHUCNC.dbo.V_RD' does not have a primary key 
           <Property Name="TY_LE_CHI_PHI_RD" Type="Double" />
           <Property Name="TY_LE_DH_TREN_DH_THAM_GIA_RD" Type="Double" />
           <Property Name="KINH_PHI" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="NAME">
+          <Key>
+            <PropertyRef Name="TENDN_VT" />
+          </Key>
+          <Property Name="TENDN_VT" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LINK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -141,6 +157,14 @@ warning 6002: The table/view 'DUAN_KHUCNC.dbo.V_RD' does not have a primary key 
                 <ScalarProperty Name="TY_LE_DH_TREN_DH_THAM_GIA_RD" ColumnName="TY_LE_DH_TREN_DH_THAM_GIA_RD" />
                 <ScalarProperty Name="TY_LE_CHI_PHI_RD" ColumnName="TY_LE_CHI_PHI_RD" />
                 <ScalarProperty Name="NAM" ColumnName="NAM" />
+                <ScalarProperty Name="TENDN_VT" ColumnName="TENDN_VT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NAMEs">
+            <EntityTypeMapping TypeName="DUAN_KHUCNCModel.NAME">
+              <MappingFragment StoreEntitySet="NAME">
+                <ScalarProperty Name="LINK" ColumnName="LINK" />
                 <ScalarProperty Name="TENDN_VT" ColumnName="TENDN_VT" />
               </MappingFragment>
             </EntityTypeMapping>

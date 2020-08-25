@@ -28,5 +28,6 @@ namespace DoAnThucTap.Models
         public virtual DbSet<TY_LE_CHI_RD> TY_LE_CHI_RD { get; set; }
         public virtual DbSet<TY_LE_LAO_DONG_RD> TY_LE_LAO_DONG_RD { get; set; }
         public virtual DbSet<V_RD> V_RD { get; set; }
+        public virtual DbSet<NAME> NAMEs { get; set; }
     }
 }
