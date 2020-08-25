@@ -1,21 +1,17 @@
 ﻿@model DoAnThucTap.ViewModel.RDViewModel
 
 @{
-    ViewBag.Title = "Prediction";
+    ViewBag.Title = "Dự báo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@*<div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown button
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            @foreach (var viewRD in Model.viewRD)
-            {
-                <li>@viewRD.TENDN_VT</li>
-            }
-        </div>
-    </div>*@
-
-@Html.DropDownList("MySkills", (IEnumerable
-        <SelectListItem>)ViewBag.DoanhNghiep, "--Chọn doanh nghiệp cần xem--")
+<br />
+<ol class="breadcrumb mb-4">
+    Dự báo tỷ lệ chi nghiên cứu và phát triển (R&D) của một số doanh nghiệp đang hoạt động ở khu công nghệ cao năm 2020
+</ol>
+<img class="img-fluid" src="~/Content/img/chiRD.png" />
+<br />
+<br />
+<ol class="breadcrumb mb-4">
+    Dự báo tỷ lệ lao động trình độ đại học/trên đại học tham gia nghiên cứu và phát triển (R&D) của một số doanh nghiệp đang hoạt động ở khu công nghệ cao năm 2020
+</ol>
+<img class="img-fluid" src="~/Content/img/dhRd.png" />

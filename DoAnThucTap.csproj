@@ -167,7 +167,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Chi RD.png" />
     <Content Include="Content\css\styles.css" />
     <Content Include="Content\img\chiRD.png" />
     <Content Include="Content\img\daikou.png" />
@@ -187,8 +186,7 @@
     <Content Include="Content\img\theGioiGen.png" />
     <Content Include="Content\img\unitedhealthcare.png" />
     <Content Include="Content\js\scripts.js" />
-    <Content Include="Content\Tham gia RD.png" />
-    <Content Include="Content\xuat khau cnc.png" />
+    <Content Include="Content\img\xuat khau cnc.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

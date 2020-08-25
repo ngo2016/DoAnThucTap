@@ -1,7 +1,7 @@
 ﻿@model DoAnThucTap.ViewModel.RDViewModel
 
 @{
-    ViewBag.Title = "Report";
+    ViewBag.Title = "Thống kê";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -25,7 +25,7 @@
                     <th>@Html.DisplayNameFor(m => Model.RDCost.FirstOrDefault().NAM_2017)</th>
                     <th>@Html.DisplayNameFor(m => Model.RDCost.FirstOrDefault().NAM_2018)</th>
                     <th>@Html.DisplayNameFor(m => Model.RDCost.FirstOrDefault().NAM_2019)</th>
-</thead>
+            </thead>
             <tbody>
                 @foreach (var RD in Model.RDCost)
                 {
@@ -68,6 +68,6 @@
                 }
             </tbody>
         </table>
-    </div>    
+    </div>
 </div>
 
