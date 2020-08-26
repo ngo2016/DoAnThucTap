@@ -5,6 +5,58 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DUAN_KHUCNCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GIAY_CNDT">
+          <Key>
+            <PropertyRef Name="SO_GCNDT" />
+          </Key>
+          <Property Name="SO_GCNDT" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="ID_TTHS" Type="int" Nullable="false" />
+          <Property Name="MA_CTHTDT" Type="nchar" MaxLength="20" />
+          <Property Name="MA_LH" Type="nchar" MaxLength="10" />
+          <Property Name="MA_QG" Type="nchar" MaxLength="3" />
+          <Property Name="SO_CNDKKD" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="TEN_DU_AN_TIENG_VIET" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="TEN_DU_AN_TIENG_ANH" Type="nvarchar" MaxLength="200" />
+          <Property Name="TEN_DU_AN_VIET_TAT" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAY_DANG_KY" Type="datetime" Nullable="false" />
+          <Property Name="NGAY_KY" Type="datetime" />
+          <Property Name="MUC_TIEU_HOAT_DONG" Type="ntext" Nullable="false" />
+          <Property Name="QUI_MO_DU_AN" Type="ntext" />
+          <Property Name="VON_DAU_TU_USD" Type="money" />
+          <Property Name="VON_DAU_TU_VND" Type="money" />
+          <Property Name="VON_DIEU_LE_USD" Type="money" />
+          <Property Name="VON_DIEU_LE_VND" Type="money" />
+          <Property Name="TY_GIA" Type="float" />
+          <Property Name="DIEN_TICH_DAT_SU_DUNG" Type="float" />
+          <Property Name="DIEN_TICH_DAT_THUE" Type="float" />
+          <Property Name="TIEN_THUE_DAT_HANG_NAM" Type="money" />
+          <Property Name="DIEN_TICH_DAT_GIAO" Type="float" />
+          <Property Name="DIEN_TICH_NHA_XUONG" Type="float" />
+          <Property Name="SO_CNDKKD_CHO_THUE_NHA_XUONG" Type="nchar" MaxLength="20" />
+          <Property Name="CONG_NGHE_XUAT_XU" Type="nvarchar" MaxLength="500" />
+          <Property Name="SAN_PHAM_DV_CHINH" Type="nvarchar" MaxLength="500" />
+          <Property Name="TIEU_CHUAN_KY_THUAT" Type="nvarchar" MaxLength="500" />
+          <Property Name="GTGT_CUA_SAN_PHAM" Type="float" />
+          <Property Name="TRANG_THIET_BI" Type="nvarchar" MaxLength="500" />
+          <Property Name="NANG_LUC_SX" Type="nvarchar" MaxLength="500" />
+          <Property Name="THI_TRUONG_TRONG_NUOC" Type="nvarchar" MaxLength="200" />
+          <Property Name="NGUYEN_VAT_LIEU" Type="nvarchar" MaxLength="500" />
+          <Property Name="PHAN_TRAM_NVL_MUA_TRONG_NUOC" Type="float" />
+          <Property Name="NGUON_CUNG_CAP_NVL" Type="nvarchar" MaxLength="100" />
+          <Property Name="PHAN_TRAM_LKKTC_TU_SX" Type="nvarchar" MaxLength="100" />
+          <Property Name="PHAN_TRAM_LKKTC_DAT_HANG_TRONG_NUOC" Type="nvarchar" MaxLength="100" />
+          <Property Name="THOI_GIAN_HOAT_DONG" Type="int" />
+          <Property Name="QUI_MO_NHAP_KHAU" Type="money" />
+          <Property Name="QUI_MO_XUAT_KHAU" Type="money" />
+          <Property Name="TIEN_DO_XD" Type="nvarchar" MaxLength="500" />
+          <Property Name="TIEN_DO_MMTB" Type="nvarchar" MaxLength="500" />
+          <Property Name="TIEN_DO_SX_THU" Type="nvarchar" MaxLength="500" />
+          <Property Name="TIEN_DO_SXKD" Type="nvarchar" MaxLength="500" />
+          <Property Name="DUONG_DAN" Type="nvarchar" MaxLength="200" />
+          <Property Name="SO_QD_THU_HOI" Type="nvarchar" MaxLength="20" />
+          <Property Name="NGAY_QD_THU_HOI" Type="date" />
+          <Property Name="NGUYEN_NHAN_THU_HOI" Type="nvarchar" MaxLength="200" />
+        </EntityType>
         <EntityType Name="NAME">
           <Key>
             <PropertyRef Name="TENDN_VT" />
@@ -49,6 +101,7 @@ warning 6002: The table/view 'DUAN_KHUCNC.dbo.V_RD' does not have a primary key 
           <Property Name="KINH_PHI" Type="money" />
         </EntityType>
         <EntityContainer Name="DUAN_KHUCNCModelStoreContainer">
+          <EntitySet Name="GIAY_CNDT" EntityType="Self.GIAY_CNDT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NAME" EntityType="Self.NAME" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TY_LE_CHI_RD" EntityType="Self.TY_LE_CHI_RD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TY_LE_LAO_DONG_RD" EntityType="Self.TY_LE_LAO_DONG_RD" store:Type="Tables" store:Schema="dbo">
@@ -102,6 +155,7 @@ warning 6002: The table/view 'DUAN_KHUCNC.dbo.V_RD' does not have a primary key 
           <EntitySet Name="TY_LE_LAO_DONG_RD" EntityType="Self.TY_LE_LAO_DONG_RD" />
           <EntitySet Name="V_RD" EntityType="DUAN_KHUCNCModel.V_RD" />
           <EntitySet Name="NAMEs" EntityType="DUAN_KHUCNCModel.NAME" />
+          <EntitySet Name="GIAY_CNDT" EntityType="DUAN_KHUCNCModel.GIAY_CNDT" />
         </EntityContainer>
         <EntityType Name="V_RD">
           <Key>
@@ -119,6 +173,58 @@ warning 6002: The table/view 'DUAN_KHUCNC.dbo.V_RD' does not have a primary key 
           </Key>
           <Property Name="TENDN_VT" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="LINK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GIAY_CNDT">
+          <Key>
+            <PropertyRef Name="SO_GCNDT" />
+          </Key>
+          <Property Name="SO_GCNDT" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="ID_TTHS" Type="Int32" Nullable="false" />
+          <Property Name="MA_CTHTDT" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="MA_LH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="MA_QG" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="SO_CNDKKD" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="TEN_DU_AN_TIENG_VIET" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_DU_AN_TIENG_ANH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_DU_AN_VIET_TAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_DANG_KY" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NGAY_KY" Type="DateTime" Precision="3" />
+          <Property Name="MUC_TIEU_HOAT_DONG" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QUI_MO_DU_AN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VON_DAU_TU_USD" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="VON_DAU_TU_VND" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="VON_DIEU_LE_USD" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="VON_DIEU_LE_VND" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TY_GIA" Type="Double" />
+          <Property Name="DIEN_TICH_DAT_SU_DUNG" Type="Double" />
+          <Property Name="DIEN_TICH_DAT_THUE" Type="Double" />
+          <Property Name="TIEN_THUE_DAT_HANG_NAM" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="DIEN_TICH_DAT_GIAO" Type="Double" />
+          <Property Name="DIEN_TICH_NHA_XUONG" Type="Double" />
+          <Property Name="SO_CNDKKD_CHO_THUE_NHA_XUONG" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="CONG_NGHE_XUAT_XU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SAN_PHAM_DV_CHINH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TIEU_CHUAN_KY_THUAT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GTGT_CUA_SAN_PHAM" Type="Double" />
+          <Property Name="TRANG_THIET_BI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NANG_LUC_SX" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="THI_TRUONG_TRONG_NUOC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NGUYEN_VAT_LIEU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PHAN_TRAM_NVL_MUA_TRONG_NUOC" Type="Double" />
+          <Property Name="NGUON_CUNG_CAP_NVL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PHAN_TRAM_LKKTC_TU_SX" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PHAN_TRAM_LKKTC_DAT_HANG_TRONG_NUOC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="THOI_GIAN_HOAT_DONG" Type="Int32" />
+          <Property Name="QUI_MO_NHAP_KHAU" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="QUI_MO_XUAT_KHAU" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TIEN_DO_XD" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TIEN_DO_MMTB" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TIEN_DO_SX_THU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TIEN_DO_SXKD" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DUONG_DAN" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SO_QD_THU_HOI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_QD_THU_HOI" Type="DateTime" Precision="0" />
+          <Property Name="NGUYEN_NHAN_THU_HOI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -166,6 +272,59 @@ warning 6002: The table/view 'DUAN_KHUCNC.dbo.V_RD' does not have a primary key 
               <MappingFragment StoreEntitySet="NAME">
                 <ScalarProperty Name="LINK" ColumnName="LINK" />
                 <ScalarProperty Name="TENDN_VT" ColumnName="TENDN_VT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GIAY_CNDT">
+            <EntityTypeMapping TypeName="DUAN_KHUCNCModel.GIAY_CNDT">
+              <MappingFragment StoreEntitySet="GIAY_CNDT">
+                <ScalarProperty Name="NGUYEN_NHAN_THU_HOI" ColumnName="NGUYEN_NHAN_THU_HOI" />
+                <ScalarProperty Name="NGAY_QD_THU_HOI" ColumnName="NGAY_QD_THU_HOI" />
+                <ScalarProperty Name="SO_QD_THU_HOI" ColumnName="SO_QD_THU_HOI" />
+                <ScalarProperty Name="DUONG_DAN" ColumnName="DUONG_DAN" />
+                <ScalarProperty Name="TIEN_DO_SXKD" ColumnName="TIEN_DO_SXKD" />
+                <ScalarProperty Name="TIEN_DO_SX_THU" ColumnName="TIEN_DO_SX_THU" />
+                <ScalarProperty Name="TIEN_DO_MMTB" ColumnName="TIEN_DO_MMTB" />
+                <ScalarProperty Name="TIEN_DO_XD" ColumnName="TIEN_DO_XD" />
+                <ScalarProperty Name="QUI_MO_XUAT_KHAU" ColumnName="QUI_MO_XUAT_KHAU" />
+                <ScalarProperty Name="QUI_MO_NHAP_KHAU" ColumnName="QUI_MO_NHAP_KHAU" />
+                <ScalarProperty Name="THOI_GIAN_HOAT_DONG" ColumnName="THOI_GIAN_HOAT_DONG" />
+                <ScalarProperty Name="PHAN_TRAM_LKKTC_DAT_HANG_TRONG_NUOC" ColumnName="PHAN_TRAM_LKKTC_DAT_HANG_TRONG_NUOC" />
+                <ScalarProperty Name="PHAN_TRAM_LKKTC_TU_SX" ColumnName="PHAN_TRAM_LKKTC_TU_SX" />
+                <ScalarProperty Name="NGUON_CUNG_CAP_NVL" ColumnName="NGUON_CUNG_CAP_NVL" />
+                <ScalarProperty Name="PHAN_TRAM_NVL_MUA_TRONG_NUOC" ColumnName="PHAN_TRAM_NVL_MUA_TRONG_NUOC" />
+                <ScalarProperty Name="NGUYEN_VAT_LIEU" ColumnName="NGUYEN_VAT_LIEU" />
+                <ScalarProperty Name="THI_TRUONG_TRONG_NUOC" ColumnName="THI_TRUONG_TRONG_NUOC" />
+                <ScalarProperty Name="NANG_LUC_SX" ColumnName="NANG_LUC_SX" />
+                <ScalarProperty Name="TRANG_THIET_BI" ColumnName="TRANG_THIET_BI" />
+                <ScalarProperty Name="GTGT_CUA_SAN_PHAM" ColumnName="GTGT_CUA_SAN_PHAM" />
+                <ScalarProperty Name="TIEU_CHUAN_KY_THUAT" ColumnName="TIEU_CHUAN_KY_THUAT" />
+                <ScalarProperty Name="SAN_PHAM_DV_CHINH" ColumnName="SAN_PHAM_DV_CHINH" />
+                <ScalarProperty Name="CONG_NGHE_XUAT_XU" ColumnName="CONG_NGHE_XUAT_XU" />
+                <ScalarProperty Name="SO_CNDKKD_CHO_THUE_NHA_XUONG" ColumnName="SO_CNDKKD_CHO_THUE_NHA_XUONG" />
+                <ScalarProperty Name="DIEN_TICH_NHA_XUONG" ColumnName="DIEN_TICH_NHA_XUONG" />
+                <ScalarProperty Name="DIEN_TICH_DAT_GIAO" ColumnName="DIEN_TICH_DAT_GIAO" />
+                <ScalarProperty Name="TIEN_THUE_DAT_HANG_NAM" ColumnName="TIEN_THUE_DAT_HANG_NAM" />
+                <ScalarProperty Name="DIEN_TICH_DAT_THUE" ColumnName="DIEN_TICH_DAT_THUE" />
+                <ScalarProperty Name="DIEN_TICH_DAT_SU_DUNG" ColumnName="DIEN_TICH_DAT_SU_DUNG" />
+                <ScalarProperty Name="TY_GIA" ColumnName="TY_GIA" />
+                <ScalarProperty Name="VON_DIEU_LE_VND" ColumnName="VON_DIEU_LE_VND" />
+                <ScalarProperty Name="VON_DIEU_LE_USD" ColumnName="VON_DIEU_LE_USD" />
+                <ScalarProperty Name="VON_DAU_TU_VND" ColumnName="VON_DAU_TU_VND" />
+                <ScalarProperty Name="VON_DAU_TU_USD" ColumnName="VON_DAU_TU_USD" />
+                <ScalarProperty Name="QUI_MO_DU_AN" ColumnName="QUI_MO_DU_AN" />
+                <ScalarProperty Name="MUC_TIEU_HOAT_DONG" ColumnName="MUC_TIEU_HOAT_DONG" />
+                <ScalarProperty Name="NGAY_KY" ColumnName="NGAY_KY" />
+                <ScalarProperty Name="NGAY_DANG_KY" ColumnName="NGAY_DANG_KY" />
+                <ScalarProperty Name="TEN_DU_AN_VIET_TAT" ColumnName="TEN_DU_AN_VIET_TAT" />
+                <ScalarProperty Name="TEN_DU_AN_TIENG_ANH" ColumnName="TEN_DU_AN_TIENG_ANH" />
+                <ScalarProperty Name="TEN_DU_AN_TIENG_VIET" ColumnName="TEN_DU_AN_TIENG_VIET" />
+                <ScalarProperty Name="SO_CNDKKD" ColumnName="SO_CNDKKD" />
+                <ScalarProperty Name="MA_QG" ColumnName="MA_QG" />
+                <ScalarProperty Name="MA_LH" ColumnName="MA_LH" />
+                <ScalarProperty Name="MA_CTHTDT" ColumnName="MA_CTHTDT" />
+                <ScalarProperty Name="ID_TTHS" ColumnName="ID_TTHS" />
+                <ScalarProperty Name="SO_GCNDT" ColumnName="SO_GCNDT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "PileChartReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/chart/exporting.js"></script>
+<script src="~/Scripts/chart/highcharts.js"></script>
+
+<div class="jumbotron">
+    <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $.getJSON("/Home/GetData", function (data) {
+            Highcharts.chart('container', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Tỷ lệ hình thức đầu tư của các dự án trong khu công nghệ cao'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            style: {
+                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Tỷ lệ',
+                    colorByPoint: true,
+                    data: [{
+                        name: 'Đào tạo',
+                        y: data.DT
+                    }, {
+                        name: 'Dịch vụ công nghệ cao',
+                        y: data.DV_CNC
+                    }, {
+                        name: 'Dịch vụ công nghiệp hỗ trợ',
+                        y: data.DV_CNHT
+                    }, {
+                        name: 'Dịch vụ dân sinh',
+                        y: data.DV_DS
+                    }, {
+                        name: 'Dịch vụ hậu cần',
+                        y: data.DV_HC
+                    }, {
+                        name: 'Dịch vụ thương mại',
+                        y: data.DV_TM
+                    }, {
+                        name: 'Phát triển hạ tầng',
+                        y: data.PTHT
+                    }, {
+                        name: 'R&D',
+                        y: data.RD
+                    }, {
+                        name: 'Sản xuất công nghệ cao',
+                        y: data.SX_CNC
+                    }, {
+                        name: 'Sản xuất công nghiệp hỗ trợ',
+                        y: data.SX_CNHT
+                    }, {
+                        name: 'Ươm tạo',
+                        y: data.UT
+                    }]
+                }]
+            });
+        });
+    });
+</script>
+
