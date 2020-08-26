@@ -242,6 +242,7 @@
     <Content Include="Views\Home\Report.cshtml" />
     <Content Include="Views\Home\Prediction.cshtml" />
     <Content Include="Views\Home\PileChartReport.cshtml" />
+    <Content Include="Views\Home\PredictionXK.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

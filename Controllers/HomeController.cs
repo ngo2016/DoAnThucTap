@@ -31,6 +31,11 @@ namespace DoAnThucTap.Controllers
         {            
             return View();
         }
+        
+        public ActionResult PredictionXK()
+        {            
+            return View();
+        }
 
         public ActionResult GetData()
         {
